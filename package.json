@@ -1,5 +1,5 @@
 {
-  "name": "powerbi-visuals-utils-chartutils",
+  "name": "maq-utils-chartutils",
   "version": "1.5.1",
   "description": "ChartUtils",
   "main": "lib/index.js",
@@ -10,7 +10,7 @@
   "keywords": [
     "powerbi-visuals-utils"
   ],
-  "author": "Microsoft",
+  "author": "MAQSoftware",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Microsoft/powerbi-visuals-utils-chartutils/issues"
