@@ -402,17 +402,6 @@ declare module powerbi.extensibility.utils.chart.legend {
         RightCenter = 7,
         LeftCenter = 8,
     }
-    interface ILegendConfig {
-        show: boolean;
-        legendName: string;
-        showTitle: boolean;
-        labelColor: string;
-        fontSize: number;
-        fontFamily: string;
-        sizeLegendColor: string;
-        displayUnits: number;
-        decimalPlaces: number;
-    }
     interface LegendPosition2D {
         textPosition?: Point;
         glyphPosition?: Point;
@@ -423,6 +412,9 @@ declare module powerbi.extensibility.utils.chart.legend {
         icon: LegendIcon;
         category?: string;
         measure?: any;
+        measureTooltip?: string;
+        percentage? : string;
+        percTooltip? : string;
         iconOnlyOnLabel?: boolean;
         tooltip?: string;
         layerNumber?: number;
@@ -433,6 +425,8 @@ declare module powerbi.extensibility.utils.chart.legend {
         grouped?: boolean;
         labelColor?: string;
         fontSize?: number;
+        measureSum? : number;
+        showPrimary? : boolean;
     }
     const legendProps: {
         show: string;
@@ -441,13 +435,14 @@ declare module powerbi.extensibility.utils.chart.legend {
         showTitle: string;
         labelColor: string;
         fontSize: string;
+        showPrimary : string;
     };
     interface ILegend {
         getMargins(): IViewport;
         isVisible(): boolean;
         changeOrientation(orientation: LegendPosition): void;
         getOrientation(): LegendPosition;
-        drawLegend(data: LegendData, viewport: IViewport, legendSetting: ILegendConfig): any;
+        drawLegend(data: LegendData, viewport: IViewport): any;
         /**
          * Reset the legend by clearing it
          */
